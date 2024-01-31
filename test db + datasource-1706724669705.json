@@ -1,0 +1,2762 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 27,
+      "panels": [],
+      "repeat": "v_programmalijn",
+      "repeatDirection": "h",
+      "title": "Programmalijnen",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 7,
+        "x": 0,
+        "y": 1
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT project.title \r\nFROM project \r\nWHERE project.title in ($v_programmalijn) \r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "project"
+        }
+      ],
+      "title": "Programmalijn:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 7,
+        "y": 1
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT description FROM project WHERE title IN ($v_programmalijn )",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "description",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "project"
+        }
+      ],
+      "title": "Doelstelling:",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 37,
+      "panels": [],
+      "title": "Subdoel minder ongeplande zwangerschap",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 19
+      },
+      "id": 39,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM milestone WHERE milestone_id=1 and name in ($v_subdoelen)\r\nSELECT DISTINCT milestone.name FROM milestone, leeftijdsfase, project WHERE milestone.name in ($v_subdoel) \r\nand leeftijdsfase.name in ($v_leeftijdsfase) and project.title in ($v_programmalijn) and milestone_id= 1",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "milestone"
+        }
+      ],
+      "title": "Subdoel:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 19
+      },
+      "id": 57,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM streven WHERE streven_id= 1 --and name IN ($v_subdoelen)\r\n--SELECT DISTINCT streven.name FROM streven, milestone \r\n--WHERE milestone.name IN ($v_subdoel) and streven_id= 1\r\nSELECT DISTINCT streven.name \r\nFROM streven\r\nJOIN milestone_streven ON streven.streven_id = milestone_streven.streven_id\r\nJOIN milestone ON milestone.milestone_id = milestone_streven.milestone_id\r\nWHERE streven.streven_id = 1 AND milestone.name IN ($v_subdoel)\r\n\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "streven"
+        }
+      ],
+      "title": "Streven:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 4
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 19
+      },
+      "id": 92,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT target_kerkrade, target_zuidlimburg FROM ervarengezondheid, milestone WHERE ervarengezondheid_id= 1\r\n--SELECT DISTINCT target_kerkrade, target_zuidlimburg FROM ervarengezondheid, milestone \r\n--WHERE name IN ($v_subdoel) and ervarengezondheid_id= 1 \r\nSELECT DISTINCT target_kerkrade, target_zuidlimburg\r\nFROM ervarengezondheid\r\nJOIN milestone_ervarengezondheid ON ervarengezondheid.ervarengezondheid_id = milestone_ervarengezondheid.ervarengezondheid_id\r\nJOIN milestone ON milestone.milestone_id = milestone_ervarengezondheid.milestone_id\r\nWHERE ervarengezondheid.ervarengezondheid_id = 1 AND milestone.name IN ($v_subdoel); ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "target_kerkrade",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "target_zuidlimburg",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "ervarengezondheid"
+        }
+      ],
+      "title": "Ervaren gezondheid:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 19
+      },
+      "id": 96,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/^name$/",
+          "values": true
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT DISTINCT 'Wijk' AS label, wijk.name FROM wijk, milestone \r\n--WHERE wijk.name IN ('Haanrade', 'Gracht') and wijk.name IN ($v_wijken) and milestone.name IN ($v_subdoel)\r\nSELECT DISTINCT 'Wijk' AS label, wijk.name\r\nFROM wijk\r\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\r\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\r\nWHERE wijk.name IN ('Haanrade', 'Gracht') AND wijk.name IN ($v_wijken) AND milestone.name IN ($v_subdoel);\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "wijk"
+        }
+      ],
+      "title": "Wijken:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 19
+      },
+      "id": 72,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT title FROM programma WHERE programma_id= 1 \r\n--title IN ('Diverse programmas vitaal ouder worden', 'Geboorteflex', 'Knooppunt')\r\nSELECT DISTINCT programma.title\r\nFROM programma\r\nJOIN milestone_programma ON programma.programma_id = milestone_programma.programma_id\r\nJOIN milestone ON milestone_programma.milestone_id = milestone.milestone_id\r\nWHERE programma.programma_id= 1 AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "title",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "programma"
+        }
+      ],
+      "title": "Programma's:",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 140,
+      "panels": [],
+      "title": "Subdoel meer kansrijke gezinnen",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 26
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT name FROM milestone WHERE milestone_id=2 and name in ($v_subdoel)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Subdoel:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 26
+      },
+      "id": 58,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM streven WHERE streven_id= 2\r\n--SELECT DISTINCT streven.name FROM streven, milestone \r\n--WHERE milestone.name IN ($v_subdoel) and streven_id= 2\r\nSELECT DISTINCT streven.name \r\nFROM streven\r\nJOIN milestone_streven ON streven.streven_id = milestone_streven.streven_id\r\nJOIN milestone ON milestone.milestone_id = milestone_streven.milestone_id\r\nWHERE streven.streven_id = 2 AND milestone.name IN ($v_subdoel)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Streven:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 8.5
+              },
+              {
+                "color": "red",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 26
+      },
+      "id": 50,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT target_kerkrade, target_zuidlimburg FROM ervarengezondheid WHERE ervarengezondheid_id= 2\r\n--SELECT DISTINCT target_kerkrade, target_zuidlimburg FROM ervarengezondheid, milestone \r\n--WHERE name IN ($v_subdoel) and ervarengezondheid_id= 2\r\nSELECT DISTINCT target_kerkrade, target_zuidlimburg\r\nFROM ervarengezondheid\r\nJOIN milestone_ervarengezondheid ON ervarengezondheid.ervarengezondheid_id = milestone_ervarengezondheid.ervarengezondheid_id\r\nJOIN milestone ON milestone.milestone_id = milestone_ervarengezondheid.milestone_id\r\nWHERE ervarengezondheid.ervarengezondheid_id = 2 AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Ervaren gezondheid:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 26
+      },
+      "id": 53,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM wijk, milestone \r\n--WHERE wijk_id= 1 and name IN ($v_wijken) and name IN ($v_subdoel)\r\n--SELECT DISTINCT wijk.name FROM wijk, milestone \r\n--WHERE wijk_id= 1 and wijk.name IN ($v_wijken) and milestone.name IN ($v_subdoel)\r\nSELECT DISTINCT wijk.name\r\nFROM wijk\r\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\r\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\r\nWHERE wijk.wijk_id = 1 AND wijk.name IN ($v_wijken) AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "wijk"
+        }
+      ],
+      "title": "Wijken:",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 26
+      },
+      "id": 73,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/^title$/",
+          "values": true
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT 'Programma:' AS label, title FROM programma \r\n--WHERE title IN ('Diverse programmas vitaal ouder worden', 'Geboorteflex', 'Knooppunt')\r\nSELECT 'Programma:' AS label, programma.title\r\nFROM programma\r\nJOIN milestone_programma ON programma.programma_id = milestone_programma.programma_id\r\nJOIN milestone ON milestone_programma.milestone_id = milestone.milestone_id\r\nWHERE programma.title IN ('Diverse programmas vitaal ouder worden', 'Geboorteflex', 'Knooppunt') AND milestone.name IN ($v_subdoel);\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Programma's:",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 141,
+      "panels": [],
+      "title": "Subdoel minder gebruik alcohol",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 33
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT name FROM milestone WHERE milestone_id=3 and name in ($v_subdoel) --and name in ($v_programmalijn)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 33
+      },
+      "id": 59,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM streven WHERE streven_id= 3\r\n--SELECT DISTINCT streven.name FROM streven, milestone \r\n--WHERE milestone.name IN ($v_subdoel) and streven_id= 3\r\nSELECT DISTINCT streven.name \r\nFROM streven\r\nJOIN milestone_streven ON streven.streven_id = milestone_streven.streven_id\r\nJOIN milestone ON milestone.milestone_id = milestone_streven.milestone_id\r\nWHERE streven.streven_id = 3 AND milestone.name IN ($v_subdoel)\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 33
+      },
+      "id": 51,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT DISTINCT target_kerkrade, target_zuidlimburg FROM ervarengezondheid, milestone \r\n--WHERE name IN ($v_subdoel) and ervarengezondheid_id= 3\r\nSELECT DISTINCT target_kerkrade, target_zuidlimburg\r\nFROM ervarengezondheid\r\nJOIN milestone_ervarengezondheid ON ervarengezondheid.ervarengezondheid_id = milestone_ervarengezondheid.ervarengezondheid_id\r\nJOIN milestone ON milestone.milestone_id = milestone_ervarengezondheid.milestone_id\r\nWHERE ervarengezondheid.ervarengezondheid_id = 3 AND milestone.name IN ($v_subdoel);\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 33
+      },
+      "id": 54,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM wijk WHERE wijk_id= 2 and name IN ($v_wijken)\r\n--SELECT DISTINCT wijk.name FROM wijk, milestone \r\n--WHERE  wijk.name IN ($v_wijken) and milestone.name IN ($v_subdoel) and wijk_id= 2\r\nSELECT DISTINCT wijk.name\r\nFROM wijk\r\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\r\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\r\nWHERE wijk.wijk_id = 2 AND wijk.name IN ($v_wijken) AND milestone.name IN ($v_subdoel);\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "wijk"
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 33
+      },
+      "id": 76,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT title FROM programma WHERE programma_id= 5 and title IN ($v_subdoel) \r\n--SELECT DISTINCT title\r\n--FROM programma\r\n--WHERE programma_id = 5 AND title IN ($v_subdoel);\r\n--SELECT DISTINCT title\r\n--FROM programma\r\n--WHERE programma_id = 5\r\n--  AND title IN (SELECT name FROM milestone WHERE name = $v_subdoel);\r\nSELECT DISTINCT programma.title\r\nFROM programma\r\nJOIN milestone_programma ON programma.programma_id = milestone_programma.programma_id\r\nJOIN milestone ON milestone_programma.milestone_id = milestone.milestone_id\r\nWHERE programma.programma_id= 5 AND milestone.name IN ($v_subdoel);\r\n\r\n\r\n\r\n\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 39
+      },
+      "id": 142,
+      "panels": [],
+      "title": "Subdoel betaald werken",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 40
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT name FROM milestone WHERE milestone_id=4 and name in ($v_subdoel)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 4,
+        "y": 40
+      },
+      "id": 60,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name FROM streven WHERE streven_id= 4\r\n--SELECT DISTINCT streven.name FROM streven, milestone \r\n--WHERE milestone.name IN ($v_subdoel) and streven_id= 4\r\nSELECT DISTINCT streven.name \r\nFROM streven\r\nJOIN milestone_streven ON streven.streven_id = milestone_streven.streven_id\r\nJOIN milestone ON milestone.milestone_id = milestone_streven.milestone_id\r\nWHERE streven.streven_id = 4 AND milestone.name IN ($v_subdoel)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 66
+              },
+              {
+                "color": "green",
+                "value": 72.9987
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 9,
+        "y": 40
+      },
+      "id": 52,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT target_kerkrade, target_zuidlimburg FROM ervarengezondheid WHERE ervarengezondheid_id= 4\r\n--SELECT DISTINCT target_kerkrade, target_zuidlimburg FROM ervarengezondheid, milestone \r\n--WHERE milestone.name IN ($v_subdoel) and ervarengezondheid_id= 4\r\nSELECT DISTINCT target_kerkrade, target_zuidlimburg\r\nFROM ervarengezondheid\r\nJOIN milestone_ervarengezondheid ON ervarengezondheid.ervarengezondheid_id = milestone_ervarengezondheid.ervarengezondheid_id\r\nJOIN milestone ON milestone.milestone_id = milestone_ervarengezondheid.milestone_id\r\nWHERE ervarengezondheid.ervarengezondheid_id = 4 AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 14,
+        "y": 40
+      },
+      "id": 56,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT DISTINCT wijk.name FROM wijk, milestone \r\n--WHERE wijk_id= 4 and wijk.name IN ($v_wijken) and milestone.name IN ($v_subdoel)\r\nSELECT DISTINCT wijk.name\r\nFROM wijk\r\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\r\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\r\nWHERE wijk.wijk_id = 4 AND wijk.name IN ($v_wijken) AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 40
+      },
+      "id": 77,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT title FROM programma WHERE programma_id= 6\r\nSELECT DISTINCT programma.title\r\nFROM programma\r\nJOIN milestone_programma ON programma.programma_id = milestone_programma.programma_id\r\nJOIN milestone ON milestone_programma.milestone_id = milestone.milestone_id\r\nWHERE programma.programma_id= 6 AND milestone.name IN ($v_subdoel);",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 46
+      },
+      "id": 156,
+      "panels": [],
+      "title": "KPI's subdoelen",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 47
+      },
+      "id": 97,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT subdoel_name, aantal FROM keyprestatieindicator \r\nWHERE name= 'Budget' and range IN ($v_budgetrange)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "subdoel_name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "aantal",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "keyprestatieindicator"
+        }
+      ],
+      "title": "Budget:",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 85,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 47
+      },
+      "id": 128,
+      "options": {
+        "barRadius": 0.05,
+        "barWidth": 0.75,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name, target \r\n--FROM kpi\r\n--WHERE name= 'Budget' and target IN ($v_budget) --and name IN ($v_subdoelen)\r\nSELECT subdoel_name, aantal FROM keyprestatieindicator \r\nWHERE name= 'Uitgaven' and range IN ($v_uitgavenrange)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "target",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "kpi"
+        }
+      ],
+      "title": "Uitgaven:",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 55
+      },
+      "id": 129,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.75,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT name, target \r\n--FROM kpi\r\n--WHERE name= 'Kosten' and target IN ($v_kosten)\r\nSELECT subdoel_name, aantal FROM keyprestatieindicator \r\nWHERE name= 'Kosten' and range IN ($v_kostenrange)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Kosten:",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 55
+      },
+      "id": 130,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "--SELECT kpi.name, kpi.target \r\n--FROM kpi \r\n--WHERE name= 'Uitgaven' and target IN ($v_uitgaven)\r\nSELECT subdoel_name, aantal FROM keyprestatieindicator \r\nWHERE name= 'Deelnemers' and range IN ($v_deelnemersrange)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "name",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "target",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "kpi"
+        }
+      ],
+      "title": "Deelnemers:",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 6,
+        "y": 64
+      },
+      "id": 131,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT subdoel_name, aantal FROM keyprestatieindicator \r\nWHERE name= 'Gemiddelde kosten per deelnemer' and range IN ($v_gemkosperdeel)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Gemiddelde kosten per deelnemer:",
+      "type": "barchart"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT title FROM project",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Programmalijn",
+        "multi": true,
+        "name": "v_programmalijn",
+        "options": [],
+        "query": "SELECT title FROM project",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT name FROM leeftijdsfase\n",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Leeftijdsfase",
+        "multi": true,
+        "name": "v_leeftijdsfase",
+        "options": [],
+        "query": "SELECT name FROM leeftijdsfase\n",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT milestone.name FROM milestone\nJOIN project_milestone ON milestone.milestone_id = project_milestone.milestone_id\nJOIN project ON project.project_id = project_milestone.project_id\nWHERE project.title IN ($v_programmalijn)\n",
+        "hide": 0,
+        "includeAll": true,
+        "label": "subdoel",
+        "multi": true,
+        "name": "v_subdoel",
+        "options": [],
+        "query": "SELECT milestone.name FROM milestone\nJOIN project_milestone ON milestone.milestone_id = project_milestone.milestone_id\nJOIN project ON project.project_id = project_milestone.project_id\nWHERE project.title IN ($v_programmalijn)\n",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Budget'\n\n",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Budget",
+        "multi": true,
+        "name": "v_budgetrange",
+        "options": [],
+        "query": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Budget'\n\n",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Uitgaven'",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Uitgaven",
+        "multi": true,
+        "name": "v_uitgavenrange",
+        "options": [],
+        "query": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Uitgaven'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Uitgaven'",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Kosten",
+        "multi": true,
+        "name": "v_kostenrange",
+        "options": [],
+        "query": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Uitgaven'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Deelnemers'",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Deelnemers",
+        "multi": true,
+        "name": "v_deelnemersrange",
+        "options": [],
+        "query": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Deelnemers'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Gemiddelde kosten per deelnemer'",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Gemiddelde kosten per deelnemer",
+        "multi": true,
+        "name": "v_gemkosperdeel",
+        "options": [],
+        "query": "SELECT keyprestatieindicator.range\nFROM keyprestatieindicator\nJOIN milestone_keyprestatieindicator ON keyprestatieindicator.keyprestatieindicator_id = milestone_keyprestatieindicator.keyprestatieindicator_id\nJOIN milestone ON milestone.milestone_id = milestone_keyprestatieindicator.milestone_id\nWHERE milestone.name IN ($v_subdoel) \nAND keyprestatieindicator.name= 'Gemiddelde kosten per deelnemer'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "c52664a0-508f-4b8c-9d82-bfd5c0d1cbc2"
+        },
+        "definition": "\nSELECT wijk.name\nFROM wijk\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\nWHERE milestone.name IN ($v_subdoel)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Wijken",
+        "multi": true,
+        "name": "v_wijken",
+        "options": [],
+        "query": "\nSELECT wijk.name\nFROM wijk\nJOIN milestone_wijk ON wijk.wijk_id = milestone_wijk.wijk_id\nJOIN milestone ON milestone.milestone_id = milestone_wijk.milestone_id\nWHERE milestone.name IN ($v_subdoel)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "test db + datasource",
+  "uid": "cc5b5810-8c3c-4b84-b33a-00dd7daa622b",
+  "version": 68,
+  "weekStart": ""
+}
